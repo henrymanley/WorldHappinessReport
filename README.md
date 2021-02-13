@@ -1,7 +1,7 @@
 ## Visualizing World Happiness
 Taking a look at international happiness. Running "happiness3d.py" yields the gif below. 
 
-<img src="animated_scatter.gif" width="600" height="600" /> 
+<img src="/Images/animated_scatter.gif" width="600" height="600" /> 
 
 ### Data 
 Data from [World Happiness Report 2020](https://worldhappiness.report/ed/2020/#read) Figure 2.1
