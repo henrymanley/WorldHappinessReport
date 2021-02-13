@@ -1,6 +1,11 @@
 ## Visualizing World Happiness
 Taking a look at international happiness. Running "happiness3d.py" yields the gif below. 
 
+### ImageMagick for GIF Compilation
+```
+brew install imagemagick
+```
+
 <img src="/Images/animated_scatter.gif" width="600" height="600" /> 
 
 ### Data 
