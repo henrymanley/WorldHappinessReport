@@ -9,6 +9,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import random
 from mpl_toolkits.mplot3d import  axes3d, Axes3D
+from PIL import Image
 
 plt.rc('font',family='Karla')
 cwd = os.getcwd()
@@ -71,6 +72,23 @@ def vis(colorDict):
         plt.savefig(filename, dpi=96)
         plt.gca()
 
+def imageCropper():
+    """
+    Crops all of the generated PNGs before gif compilation.
+    """
+    path = "../Images"
+    dirs = os.listdir(path)
+
+    for file in dirs:
+        path = "../Images/" + file
+        im = Image.open(path)
+        left = 145
+        top = 105
+        right = 845
+        bottom = 740
+        im1 = im.crop((left, top, right, bottom))
+        im1.save(file)
+
 def compileGif():
     bashCommand = "convert -delay 50 3DScatter*.png animated_scatter.gif"
     os.system(bashCommand)
@@ -80,4 +98,5 @@ if __name__ == "__main__":
     colors = colorMaker(colorList)
     vis(colors)
     os.chdir(cwd + '/Images/')
+    imageCropper()
     compileGif()
